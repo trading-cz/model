@@ -13,7 +13,7 @@ on:
 
 jobs:
   build-and-push:
-    uses: trading-cz/github-actions/.github/workflows/python-build-wheel.yml@main
+    uses: trading-cz/github_action/.github/workflows/python-build-wheel.yml@main
     with:
       python-version: '3.12'
       pyproject-path: 'pyproject.toml'
