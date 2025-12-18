@@ -4,7 +4,7 @@ These Pydantic models define the key structure for Kafka topics,
 enabling proper message partitioning and routing.
 """
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field  # pylint: disable=import-error
 
 
 class MarketStockQuoteKey(BaseModel):

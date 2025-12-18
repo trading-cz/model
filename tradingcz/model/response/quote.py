@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict  # pylint: disable=import-error
 
 from tradingcz.model.domain.quote import Quote
 
