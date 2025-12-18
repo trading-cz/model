@@ -10,6 +10,8 @@ disable=
     C0104,  # disallowed-name (business terms: 'bar', 'quote', 'trade' are domain essentials)
     R0903,  # too-few-public-methods (domain models intentionally data-only)
     R0913,  # too-many-arguments
+    R0801,  # duplicate-code (common __all__ patterns across response models)
+    C0415,  # import-outside-toplevel (lazy imports in conversion functions)
 
 [FORMAT]
 max-line-length=100

@@ -68,9 +68,27 @@ def snapshot_to_response(snapshot: Snapshot) -> SnapshotResponse:
     )
 
     return SnapshotResponse(
-        latest_trade=trade_to_dict(snapshot.latest_trade) if snapshot.latest_trade else None,
-        latest_quote=quote_to_dict(snapshot.latest_quote) if snapshot.latest_quote else None,
-        minute_bar=bar_to_dict(snapshot.minute_bar) if snapshot.minute_bar else None,
-        daily_bar=bar_to_dict(snapshot.daily_bar) if snapshot.daily_bar else None,
-        previous_daily_bar=bar_to_dict(snapshot.previous_daily_bar) if snapshot.previous_daily_bar else None,
+        latest_trade=(
+            trade_to_dict(snapshot.latest_trade)
+            if snapshot.latest_trade
+            else None
+        ),
+        latest_quote=(
+            quote_to_dict(snapshot.latest_quote)
+            if snapshot.latest_quote
+            else None
+        ),
+        minute_bar=(
+            bar_to_dict(snapshot.minute_bar)
+            if snapshot.minute_bar
+            else None
+        ),
+        daily_bar=(
+            bar_to_dict(snapshot.daily_bar) if snapshot.daily_bar else None
+        ),
+        previous_daily_bar=(
+            bar_to_dict(snapshot.previous_daily_bar)
+            if snapshot.previous_daily_bar
+            else None
+        ),
     )

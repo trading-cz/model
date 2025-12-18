@@ -30,5 +30,7 @@ class RawSignalKey(BaseModel):
 
     Partitions signal messages by strategy and symbol for organized processing.
     """
-    strategy_id: str = Field(description="Strategy identifier (e.g., 'momentum-01', 'mean-reversion')")
+    strategy_id: str = Field(
+        description="Strategy identifier (e.g., 'momentum-01', 'mean-reversion')"
+    )
     symbol: str = Field(description="Ticker symbol (e.g., 'AAPL', 'SPY')")
