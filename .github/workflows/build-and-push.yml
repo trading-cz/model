@@ -33,8 +33,10 @@ jobs:
           fi
           # Strip 'v' prefix if present (v0.0.8 -> 0.0.8)
           VERSION="${VERSION#v}"
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "tag=v$VERSION" >> $GITHUB_OUTPUT
+          {
+            echo "version=$VERSION"
+            echo "tag=v$VERSION"
+          } >> "$GITHUB_OUTPUT"
           echo "📦 Building version: $VERSION"
 
       - name: Verify namespace package structure
@@ -89,8 +91,10 @@ jobs:
           TAG="${{ steps.version.outputs.tag }}"
           REPO="${{ github.repository }}"
           
-          echo "### 📦 trading-sdk Published to GitHub Releases" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Version:** \`$VERSION\`" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Release:** [$TAG](https://github.com/$REPO/releases/tag/$TAG)" >> $GITHUB_STEP_SUMMARY
+          {
+            echo "### 📦 trading-sdk Published to GitHub Releases"
+            echo ""
+            echo "**Version:** \`$VERSION\`"
+            echo ""
+            echo "**Release:** [$TAG](https://github.com/$REPO/releases/tag/$TAG)"
+          } >> "$GITHUB_STEP_SUMMARY"
