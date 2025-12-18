@@ -1,0 +1,22 @@
+[MASTER]
+# Ignore patterns
+ignore-patterns=^\.#
+
+[MESSAGES CONTROL]
+disable=
+    C0114,  # missing-module-docstring (optional; already in pyproject.toml)
+    C0115,  # missing-class-docstring
+    C0116,  # missing-function-docstring
+    R0903,  # too-few-public-methods
+    R0913,  # too-many-arguments
+    C0103,  # invalid-name (for 'bar', 'quote', etc. in domain models)
+
+[FORMAT]
+max-line-length=100
+
+[DESIGN]
+max-attributes=10
+
+[VARIABLES]
+# Minimum confidence required to accept a message as valid inference for inference failures
+min-similarity-lines=4
