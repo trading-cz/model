@@ -22,4 +22,3 @@ class KafkaHelper:
             return topic_name in topics
         except KafkaException:
             return False
-

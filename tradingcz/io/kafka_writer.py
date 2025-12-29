@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import json
 import logging
 from collections.abc import Callable
@@ -56,8 +58,8 @@ class KafkaWriter(Writer[Any, Any]):
         if remaining > 0:
             logger.error("%s messages not delivered for topic %s", remaining, self.topic)
 
-    def __enter__(self):
+    def __enter__(self) -> KafkaWriter:  # type: ignore[name-defined]
         return self
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
+    def __exit__(self, exc_type, exc_val, exc_tb) -> None:
         self.close()

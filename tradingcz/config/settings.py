@@ -19,4 +19,3 @@ class LoggingSettings(BaseSettings):
 
     model_config = SettingsConfigDict(env_prefix="LOG_", extra="ignore")
     level: str = Field("INFO", description="Logging level (DEBUG, INFO, WARNING, ERROR)")
-
