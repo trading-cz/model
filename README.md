@@ -16,7 +16,7 @@ Shared SDK and data models for the trading platform.
 
 ```bash
 # Install from GitHub Releases (wheel URL)
-pip install https://github.com/trading-cz/sdk/releases/download/v0.0.8/trading_sdk-0.0.8-py3-none-any.whl
+pip install https://github.com/trading-cz/sdk/releases/download/v0.0.9/trading_sdk-0.0.9-py3-none-any.whl
 ```
 
 This creates the `tradingcz.model` namespace, which composes cleanly with other `tradingcz.*` packages (e.g., `tradingcz.ingestion` from ingestion-alpaca).
