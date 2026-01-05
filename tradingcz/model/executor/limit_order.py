@@ -2,6 +2,8 @@
 """
 from pydantic import BaseModel, ConfigDict
 
+from tradingcz.model.enum.order import TimeInForce
+
 
 class LimitOrder(BaseModel):
     model_config = ConfigDict(frozen=True)
@@ -9,10 +11,9 @@ class LimitOrder(BaseModel):
     symbol: str
     qty: float
     side: str
-    time_in_force: str
+    time_in_force: TimeInForce
     limit_price: float
     type: str | None
     order_class: str | None
     stop_loss: dict[str, float] | None
     take_profit: dict[str, float] | None
-
