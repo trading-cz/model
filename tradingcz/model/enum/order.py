@@ -19,3 +19,14 @@ class OrderType(str, Enum):
     LIMIT = "limit"             # Execute at specified price or better
     STOP = "stop"               # Trigger market order at stop price
     STOP_LIMIT = "stop_limit"   # Trigger limit order at stop price
+
+
+class TimeInForce(str, Enum):
+    """Time for which is order live"""
+    GTC = "gtc" # Good until canceled
+    DAY = "day" # Eligible for execution only until end of day
+    IOC = "ioc" # Instant for any part of the order, the rest or the whole order is otherwise immediately cancelled
+    FOK = "fok" # Fill or kill whole order only immediately
+    CLS = "cls" # Market/limit on market close - obly in market closing auction
+    OPG = "opg" # Market/limit on market open - obly in market opening auction
+
