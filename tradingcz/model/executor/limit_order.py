@@ -2,7 +2,7 @@
 """
 from pydantic import BaseModel, ConfigDict
 
-from tradingcz.model.enum.order import TimeInForce
+from tradingcz.model.enum.order import OrderClass, OrderSide, OrderType, TimeInForce
 
 
 class LimitOrder(BaseModel):
@@ -10,10 +10,10 @@ class LimitOrder(BaseModel):
 
     symbol: str
     qty: float
-    side: str
+    side: OrderSide
     time_in_force: TimeInForce
     limit_price: float
-    type: str | None
-    order_class: str | None
+    type: OrderType | None
+    order_class: OrderClass | None
     stop_loss: dict[str, float] | None
     take_profit: dict[str, float] | None
