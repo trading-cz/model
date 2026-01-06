@@ -17,8 +17,9 @@ class OrderType(str, Enum):
     """Order execution type."""
     MARKET = "market"           # Execute at current market price
     LIMIT = "limit"             # Execute at specified price or better
-    STOP = "stop"               # Trigger market order at stop price
-    STOP_LIMIT = "stop_limit"   # Trigger limit order at stop price
+    STOP = "stop"               # Trigger market order at stop price (both sides)
+    # STOP_LIMIT = "stop_limit"   # Trigger limit order at stop price (both sides)
+    # TRAILING_STOP
 
 class OrderClass(str, Enum):
     """Order class, e.g. simple or bracket order."""
@@ -35,6 +36,6 @@ class TimeInForce(str, Enum):
     DAY = "day" # Eligible for execution only until end of day
     IOC = "ioc" # Instant for any part of the order, the rest or the whole order is otherwise immediately cancelled
     FOK = "fok" # Fill or kill whole order only immediately
-    CLS = "cls" # Market/limit on market close - obly in market closing auction
-    OPG = "opg" # Market/limit on market open - obly in market opening auction
+    CLS = "cls" # Market/limit on market close - only in market closing auction
+    OPG = "opg" # Market/limit on market open - only in market opening auction
 
